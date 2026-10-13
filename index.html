@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#13182c">
-  <title>Cat Miners — Котики-шахтёры</title>
+  <title>Cat Miners</title>
   <style>
     * { box-sizing: border-box; }
     html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #13182c; }
@@ -23,15 +23,15 @@
   </style>
 </head>
 <body>
-  <main id="game" aria-label="Котики-шахтёры">
-    <canvas id="unity-canvas" width="540" height="960" tabindex="0" aria-label="Игра Котики-шахтёры"></canvas>
+  <main id="game" aria-label="Cat Miners">
+    <canvas id="unity-canvas" width="540" height="960" tabindex="0" aria-label="Cat Miners game"></canvas>
     <div id="loading" role="status" aria-live="polite">
-      <h1>Котики-шахтёры</h1>
-      <p id="status">Загрузка игры…</p>
-      <progress id="progress" value="0" max="1" aria-label="Загрузка игры"></progress>
+      <h1>Cat Miners</h1>
+      <p id="status">Loading the game…</p>
+      <progress id="progress" value="0" max="1" aria-label="Loading the game"></progress>
     </div>
   </main>
-  <button id="fullscreen" type="button" aria-label="На весь экран" title="На весь экран" hidden>⛶</button>
+  <button id="fullscreen" type="button" aria-label="Full screen" title="Full screen" hidden>⛶</button>
   <script>
     const canvas = document.getElementById("unity-canvas");
     const loading = document.getElementById("loading");
@@ -39,9 +39,9 @@
     const progress = document.getElementById("progress");
     const fullscreen = document.getElementById("fullscreen");
     const config = {
-      dataUrl: "Build/34cb27cfdd2b32124a416b752bfd389d.data.unityweb",
-      frameworkUrl: "Build/f7c7a5fdfdf2cfe155b6bf37c6d8191a.framework.js.unityweb",
-      codeUrl: "Build/8565060de58ac91ba10b8c81919eb90c.wasm.unityweb",
+      dataUrl: "Build/d4f9d116a0370d71b793410daac26277.data.unityweb",
+      frameworkUrl: "Build/528bebae287eaf63d3577d0b96394e42.framework.js.unityweb",
+      codeUrl: "Build/eac6b4ac6d90a8af528dc99511d4a9fb.wasm.unityweb",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "CatMiners",
       productName: "Cats Cute Miner",
@@ -55,12 +55,12 @@
     };
     function showFailure(message) {
       console.error(message);
-      status.textContent = "Не удалось загрузить игру. Обновите страницу и попробуйте ещё раз.";
+      status.textContent = "Could not load the game. Refresh the page and try again.";
       progress.hidden = true;
       loading.hidden = false;
     }
     const loader = document.createElement("script");
-    loader.src = "Build/822fd1a321208b3684d2b17188a722e7.loader.js";
+    loader.src = "Build/6ef7cae9ad90effec10bcc45512117c2.loader.js";
     loader.onerror = function () { showFailure("Unity loader unavailable"); };
     loader.onload = function () {
       createUnityInstance(canvas, config, function (value) { progress.value = value; })
