@@ -39,9 +39,9 @@
     const progress = document.getElementById("progress");
     const fullscreen = document.getElementById("fullscreen");
     const config = {
-      dataUrl: "Build/d4f9d116a0370d71b793410daac26277.data.unityweb",
-      frameworkUrl: "Build/528bebae287eaf63d3577d0b96394e42.framework.js.unityweb",
-      codeUrl: "Build/eac6b4ac6d90a8af528dc99511d4a9fb.wasm.unityweb",
+      dataUrl: "Build/2ad5229f2b98859bf712be849ccfaea6.data.unityweb",
+      frameworkUrl: "Build/2fea1fb724be89cbf39d6b1600b7302e.framework.js.unityweb",
+      codeUrl: "Build/2f851c39be02fcb8a195cccc0e025d0d.wasm.unityweb",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "CatMiners",
       productName: "Cats Cute Miner",
@@ -60,7 +60,7 @@
       loading.hidden = false;
     }
     const loader = document.createElement("script");
-    loader.src = "Build/6ef7cae9ad90effec10bcc45512117c2.loader.js";
+    loader.src = "Build/36b0e1a5f30482bbdcd76745320b42df.loader.js";
     loader.onerror = function () { showFailure("Unity loader unavailable"); };
     loader.onload = function () {
       createUnityInstance(canvas, config, function (value) { progress.value = value; })
